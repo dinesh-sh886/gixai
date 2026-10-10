@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write src",
+    "format:check": "prettier --check src",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
@@ -28,5 +29,6 @@
     "prettier": "^3.3.0",
     "vitest": "^2.0.0",
     "zod": "^3.23.0"
-  }
+  },
+  "type": "module"
 }

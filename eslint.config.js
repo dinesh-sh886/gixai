@@ -10,7 +10,7 @@ export default tseslint.config(
     files: ['**/*.ts'],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.base.json', './packages/*/tsconfig.json', './apps/*/tsconfig.json'],
+        project: ['./tsconfig.base.json', './packages/*/tsconfig.json', './apps/*/tsconfig.json', './tests/tsconfig.json'],
         tsconfigRootDir: import.meta.dirname,
       },
     },
