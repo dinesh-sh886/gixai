@@ -8,10 +8,19 @@ This file provides instructions for AI coding agents working on the GiX-AI repos
 
 - **Project**: GiX-AI — AI coding agent with balanced CLI and Web experiences
 - **Owner**: dinesh-gix
-- **Repository**: https://github.com/dinesh-gix/GiX-AI
+- **Primary repository**: https://github.com/dinesh-gix/GiX-AI (read-only for connected account)
+- **Writable repository**: https://github.com/dinesh-sh886/gixai.git (used for CI verification)
 - **Local directory**: `~/gix/gix-ai`
 - **Development environment**: WSL
 - **Product strategy**: Local-first, hybrid local and remote execution
+
+## Git Remote Configuration
+
+Two remotes are configured:
+- `origin` → `https://github.com/dinesh-gix/GiX-AI.git` (canonical, read-only for connected account)
+- `writable` → `https://github.com/dinesh-sh886/gixai.git` (used for CI verification and development pushes)
+
+Do not push to `origin` without explicit authorization. Use `writable` for CI verification.
 
 ## Development Rules
 
@@ -100,6 +109,7 @@ pnpm test             # Run tests
 pnpm typecheck        # TypeScript type checking
 pnpm lint             # ESLint
 pnpm format           # Prettier formatting
+pnpm format:check     # Prettier check (non-mutating)
 
 # Git
 git status --short
@@ -110,6 +120,6 @@ git diff
 
 ## Current Phase
 
-**P00.01**: Initialize the pnpm workspace and strict TypeScript foundation.
+**P00.04**: Document engineering conventions and architecture decisions.
 
 See `docs/CHUNK_REGISTER.md` for all chunks and `docs/STATUS.md` for current status.

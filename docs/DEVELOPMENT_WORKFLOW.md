@@ -200,6 +200,22 @@ git diff --check
    - Updated STATUS.md and CHUNK_REGISTER.md
 5. Review and merge to `main`
 
+### CI Verification Workflow (Dual Remote)
+
+Since the canonical repository (`origin`) is read-only for the connected account, use the `writable` remote for CI verification:
+
+```bash
+# Push to writable remote for CI
+git push writable HEAD:master
+
+# Monitor CI run
+gh run watch --repo dinesh-sh886/gixai
+```
+
+The canonical repository (`origin`) remains the source of truth. Only push to `origin` with explicit authorization.
+
+---
+
 ---
 
 ## Testing Strategy

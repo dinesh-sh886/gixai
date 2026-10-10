@@ -7,8 +7,17 @@ GiX-AI is an AI coding agent with balanced CLI and Web experiences, built for lo
 ## Repository
 
 - **Owner**: dinesh-gix
-- **Repository**: https://github.com/dinesh-gix/GiX-AI
+- **Primary repository**: https://github.com/dinesh-gix/GiX-AI (canonical, read-only for connected account)
+- **Writable repository**: https://github.com/dinesh-sh886/gixai.git (used for CI verification and development pushes)
 - **Local directory**: `~/gix/gix-ai`
+
+## Git Remote Configuration
+
+Two remotes are configured:
+- `origin` → `https://github.com/dinesh-gix/GiX-AI.git` (canonical, read-only for connected account)
+- `writable` → `https://github.com/dinesh-sh886/gixai.git` (used for CI verification and development pushes)
+
+Do not push to `origin` without explicit authorization. Use `writable` for CI verification.
 
 ## Development Environment
 
@@ -92,6 +101,9 @@ pnpm typecheck
 
 # Lint
 pnpm lint
+
+# Format check (non-mutating)
+pnpm format:check
 ```
 
 ## Documentation

@@ -309,17 +309,22 @@
 - Environment-specific configs easy
 
 ---
-
-## 2026-10-09: Session Protocol for Development
-
+ 
+## 2026-10-10: Dual Remote Repository Configuration
+ 
 **Status**: Accepted
-
-**Context**: Ensure consistent, evidence-based development.
-
-**Decision**: Mandatory session protocol: inspect → read status → identify chunk → implement → test → record → update status.
-
+ 
+**Context**: The authenticated GitHub account (dinesh-sh886) has read-only access to the canonical repository (dinesh-gix/GiX-AI). A separate writable repository (dinesh-sh886/gixai) is needed for CI verification and development pushes while preserving the canonical repository as the source of truth.
+ 
+**Decision**: Configure two Git remotes:
+- `origin` → https://github.com/dinesh-gix/GiX-AI.git (canonical, read-only)
+- `writable` → https://github.com/dinesh-sh886/gixai.git (CI verification, development pushes)
+ 
+Never push to `origin` without explicit authorization. Use `writable` for CI verification and all automated pushes.
+ 
 **Consequences**:
-- No skipped steps
-- Evidence-based progress
-- Blocker visibility
-- Discipline required
+- Canonical repository remains pristine and protected
+- CI/CD runs against writable repository
+- Local development uses writable remote for pushing
+- Manual sync required if canonical needs updating
+- Clear separation of concerns between source of truth and CI target
