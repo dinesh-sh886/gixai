@@ -12,7 +12,7 @@ Status values: `NOT_STARTED` | `IN_PROGRESS` | `BLOCKED` | `IMPLEMENTED` | `VERI
 
 | Chunk | Title | MVP | Dependencies | Status | Acceptance Criteria | Test Expectations | Evidence/Blocker | Next Action |
 |-------|-------|-----|--------------|--------|---------------------|-------------------|------------------|-------------|
-| P00.01 | Initialize pnpm workspace and strict TypeScript foundation | 1 | — | IN_PROGRESS | pnpm workspace configured, tsconfig.base.json with strict settings, package.json with scripts, builds without errors | Workspace installs, typecheck passes | | Complete P00.01 implementation |
+| P00.01 | Initialize pnpm workspace and strict TypeScript foundation | 1 | — | VERIFIED | pnpm workspace configured, tsconfig.base.json with strict settings, package.json with scripts, builds without errors | Workspace installs, typecheck passes | pnpm install/build/typecheck/lint/format all exit 0; commits f154593, fa51691 | Proceed to P00.02 |
 | P00.02 | Establish lint, formatting, type-check, test, and build commands | 1 | P00.01 | NOT_STARTED | ESLint, Prettier, Vitest, TypeScript commands work; all pass on empty workspace | `pnpm lint`, `pnpm format`, `pnpm typecheck`, `pnpm test`, `pnpm build` all exit 0 | | Wait for P00.01 |
 | P00.03 | Establish CI checks | 1 | P00.02 | NOT_STARTED | GitHub Actions workflow runs lint, typecheck, test on push/PR | CI passes on clean repo | | Wait for P00.02 |
 | P00.04 | Document engineering conventions and architecture decisions | 1 | P00.01 | NOT_STARTED | DEVELOPMENT_WORKFLOW.md, DECISIONS.md created and accurate | Documents exist and are readable | | Wait for P00.01 |

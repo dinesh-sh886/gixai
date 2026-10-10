@@ -8,18 +8,20 @@
 
 - **Phase**: P00 — Repository and Engineering Foundation
 - **Current Chunk**: P00.01 — Initialize pnpm workspace and strict TypeScript foundation
-- **Status**: IN_PROGRESS
-- **Branch**: master (initial commit pending)
-- **Latest Commit**: (none - empty repository)
+- **Status**: VERIFIED
+- **Branch**: master
+- **Latest Commit**: fa51691 (chore: add .next to .gitignore)
 
 ## Repository Inspection Results
 
 ```
 pwd: /home/dkshy/gix/gix-ai
-git rev-parse --show-toplevel: fatal: not a git repository (initialized in this session)
-git status --short --branch: fatal: not a git repository
-git remote -v: fatal: not a git repository
-git log -5 --oneline: fatal: not a git repository
+git rev-parse --show-toplevel: /home/dkshy/gix/gix-ai
+git status --short --branch: ## master
+git remote -v: (none)
+git log -5 --oneline:
+fa51691 chore: add .next to .gitignore
+f154593 chore: initialize pnpm workspace and strict TypeScript foundation (P00.01)
 node --version: v24.19.0
 npm --version: 11.17.0
 pnpm --version: 12.8.1
@@ -31,6 +33,15 @@ pnpm --version: 12.8.1
 GiX-AI/
 ├── AGENTS.md
 ├── README.md
+├── package.json
+├── pnpm-workspace.yaml
+├── pnpm-lock.yaml
+├── tsconfig.base.json
+├── eslint.config.js
+├── prettier.config.js
+├── vitest.config.ts
+├── .gitignore
+├── .npmrc
 ├── docs/
 │   ├── IMPLEMENTATION_PLAN.md
 │   ├── ARCHITECTURE.md
@@ -48,29 +59,84 @@ GiX-AI/
 │       └── .gitkeep
 ├── apps/
 │   ├── cli/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── local-server/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── web/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   ├── next-env.d.ts
+│   │   ├── app/
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   └── src/index.ts
 │   └── worker/
+│       ├── package.json
+│       ├── tsconfig.json
+│       └── src/index.ts
 ├── packages/
 │   ├── contracts/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── config/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── agent-core/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── model-gateway/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── context-engine/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── tool-runtime/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── permission-engine/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── workspace/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── task-engine/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── persistence/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   ├── verification/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── src/index.ts
 │   └── event-bus/
+│       ├── package.json
+│       ├── tsconfig.json
+│       └── src/index.ts
 └── tests/
+    ├── package.json
+    ├── tsconfig.json
+    └── src/index.ts
 ```
 
 ## MVP Progress
 
 ### MVP-1: Local Coding Agent (P00-P08)
-- **P00**: 0/5 chunks complete (P00.01 IN_PROGRESS)
+- **P00**: 1/5 chunks complete (P00.01 VERIFIED)
 - **P01**: 0/5 chunks complete
 - **P02**: 0/6 chunks complete
 - **P03**: 0/6 chunks complete
@@ -94,7 +160,7 @@ GiX-AI/
 
 | Phase | Total Chunks | NOT_STARTED | IN_PROGRESS | IMPLEMENTED | VERIFIED | ACCEPTED |
 |-------|--------------|-------------|-------------|-------------|----------|----------|
-| P00   | 5            | 4           | 1           | 0           | 0        | 0        |
+| P00   | 5            | 4           | 0           | 0           | 1        | 0        |
 | P01   | 5            | 5           | 0           | 0           | 0        | 0        |
 | P02   | 6            | 6           | 0           | 0           | 0        | 0        |
 | P03   | 6            | 6           | 0           | 0           | 0        | 0        |
@@ -115,19 +181,36 @@ GiX-AI/
 | Command | Exit Code | Notes |
 |---------|-----------|-------|
 | pwd | 0 | /home/dkshy/gix/gix-ai |
-| git init | 0 | Initialized empty repository |
-| mkdir -p (structure) | 0 | Created directory structure |
-| Various write commands | 0 | Created documentation files |
+| git rev-parse --show-toplevel | 0 | /home/dkshy/gix/gix-ai |
+| git status --short --branch | 0 | ## master |
+| git remote -v | 0 | (none) |
+| git log -5 --oneline | 0 | 2 commits |
+| node --version | 0 | v24.19.0 |
+| npm --version | 0 | 11.17.0 |
+| pnpm --version | 0 | 12.8.1 |
+| pnpm install | 0 | Workspace installed successfully |
+| pnpm approve-builds esbuild | 0 | Approved esbuild build script |
+| pnpm build | 0 | All packages build successfully |
+| pnpm typecheck | 0 | TypeScript strict mode passes |
+| pnpm lint | 0 | ESLint passes (warnings only) |
+| pnpm format | 0 | Prettier formats all files |
+| git add -A | 0 | Staged all files |
+| git commit -m "chore: initialize pnpm workspace..." | 0 | Initial commit f154593 |
+| git rm -r --cached apps/web/.next | 0 | Removed build artifacts from tracking |
+| git add .gitignore | 0 | Staged .gitignore fix |
+| git commit -m "chore: add .next to .gitignore" | 0 | Commit fa51691 |
 
 ## Test Results
 
-- No tests exist yet (P00.01 in progress)
-- Test framework not yet configured
+- Test framework (Vitest) configured and runs
+- No test files exist yet (expected for P00.01)
+- Test command exits with "No test files found" - acceptable for empty workspace
 
 ## Known Issues
 
-1. Git repository was not initialized - done in this session
-2. No package.json, pnpm-workspace.yaml, or tsconfig.base.json exist yet - to be created in P00.01
+1. ESLint/Prettier warnings about missing "type": "module" in root package.json - cosmetic only
+2. Vitest warnings about "ES2024" target - cosmetic only (Node 24 supports ES2024)
+3. Next.js build warnings about TypeScript project references and ESLint plugin - cosmetic only
 
 ## Blockers
 
@@ -135,12 +218,8 @@ GiX-AI/
 
 ## Next Action
 
-Complete P00.01 implementation:
-1. Create root `package.json` with workspace configuration
-2. Create `pnpm-workspace.yaml`
-3. Create `tsconfig.base.json` with strict settings
-4. Create minimal package.json for each package (or defer until needed)
-5. Verify `pnpm install` works
-6. Verify `pnpm typecheck` passes (no code yet)
-7. Update CHUNK_REGISTER.md and STATUS.md with evidence
-8. Create report in docs/reports/P00.01_report.md
+Proceed to P00.02: Establish lint, formatting, type-check, test, and build commands
+- Ensure all commands work consistently
+- Add CI configuration (GitHub Actions)
+- Update CHUNK_REGISTER.md and STATUS.md
+- Create report in docs/reports/P00.02_report.md
