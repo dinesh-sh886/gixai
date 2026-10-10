@@ -7,10 +7,10 @@
 ## Current Project Status
 
 - **Phase**: P00 — Repository and Engineering Foundation
-- **Current Chunk**: P00.03 — Establish CI checks
+- **Current Chunk**: P00.04 — Document engineering conventions and architecture decisions
 - **Status**: VERIFIED
 - **Branch**: master
-- **Latest Commit**: b6a6fcd (fix: approve esbuild build script in CI)
+- **Latest Commit**: c5a56e1 (docs: mark P00.03 VERIFIED with successful CI run evidence)
 
 ## Repository Inspection Results
 
@@ -184,7 +184,7 @@ GiX-AI/
 ## MVP Progress
 
 ### MVP-1: Local Coding Agent (P00-P08)
-- **P00**: 3/5 chunks complete (P00.01 VERIFIED, P00.02 VERIFIED, P00.03 VERIFIED)
+- **P00**: 4/5 chunks complete (P00.01 VERIFIED, P00.02 VERIFIED, P00.03 VERIFIED, P00.04 VERIFIED)
 - **P01**: 0/5 chunks complete
 - **P02**: 0/6 chunks complete
 - **P03**: 0/6 chunks complete
@@ -208,7 +208,7 @@ GiX-AI/
 
 | Phase | Total Chunks | NOT_STARTED | IN_PROGRESS | IMPLEMENTED | VERIFIED | ACCEPTED |
 |-------|--------------|-------------|-------------|-------------|----------|----------|
-| P00   | 5            | 2           | 0           | 0           | 3        | 0        |
+| P00   | 5            | 1           | 0           | 0           | 4        | 0        |
 | P01   | 5            | 5           | 0           | 0           | 0        | 0        |
 | P02   | 6            | 6           | 0           | 0           | 0        | 0        |
 | P03   | 6            | 6           | 0           | 0           | 0        | 0        |
@@ -289,7 +289,9 @@ GiX-AI/
 
 ## Next Action
 
-Proceed to P00.04: Document engineering conventions and architecture decisions
-- Create DEVELOPMENT_WORKFLOW.md and DECISIONS.md
+Proceed to P00.05: Create deterministic testing utilities and repository fixtures
+- Implement fake model provider in `tests/`
+- Add repository fixtures for workspace tests
+- Create test utilities for common patterns
 - Update CHUNK_REGISTER.md and STATUS.md
-- Create report in docs/reports/P00.04_report.md
+- Create report in docs/reports/P00.05_report.md
