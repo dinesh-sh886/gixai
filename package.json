@@ -1,0 +1,36 @@
+{
+  "name": "gix-ai",
+  "version": "0.0.0",
+  "private": true,
+  "description": "GiX-AI — AI coding agent with balanced CLI and Web experiences",
+  "author": "dinesh-gix",
+  "license": "MIT",
+  "scripts": {
+    "install:all": "pnpm install --recursive",
+    "build": "pnpm --recursive run build",
+    "build:watch": "pnpm --recursive run build:watch",
+    "typecheck": "pnpm --recursive run typecheck",
+    "lint": "pnpm --recursive run lint",
+    "format": "pnpm --recursive run format",
+    "test": "pnpm --recursive run test",
+    "test:watch": "pnpm --recursive run test:watch",
+    "test:coverage": "pnpm --recursive run test:coverage",
+    "clean": "pnpm --recursive run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "vitest": "^2.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "@eslint/js": "^9.0.0",
+    "typescript-eslint": "^8.0.0",
+    "eslint-config-prettier": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=12.0.0"
+  },
+  "packageManager": "pnpm@12.8.1"
+}
